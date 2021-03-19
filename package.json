@@ -16,7 +16,7 @@
     "practice",
     "cypress"
   ],
-  "author": "María Alejandra Ibáñez mariaibanez07@gmail.com marialejandraip",
+  "author": "María Alejandra Ibáñez <mariaibanez07@gmail.com> (marialejandraip)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/marialejandraip/cypress-training/issues"
