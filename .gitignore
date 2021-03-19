@@ -9,6 +9,7 @@ cypress/results/*
 cypress/reports/*
 cypress/screenshots/*
 cypress/videos/*
+cypress/integration/examples/*
 
 ### Node ###
 # Logs
@@ -172,6 +173,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,vscode,node,cypressio
 
-...
-cypress/integration/examples/*
-...
+
+
+
