@@ -22,7 +22,8 @@
     "url": "https://github.com/marialejandraip/cypress-training/issues"
   },
   "homepage": "https://github.com/marialejandraip/cypress-training#readme",
-  "dependencies": {
+  
+  "devDependencies": {
     "cypress": "^6.8.0"
   }
 }
