@@ -1,8 +1,8 @@
 module.exports = {
-  mode: 'development',
-  devtool: 'eval-source-map',
+  mode: "development",
+  devtool: "eval-source-map",
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: [".ts", ".js"],
   },
   module: {
     rules: [
@@ -11,7 +11,7 @@ module.exports = {
         exclude: [/node_modules/],
         use: [
           {
-            loader: 'ts-loader',
+            loader: "ts-loader",
             options: {
               transpileOnly: true,
             },
