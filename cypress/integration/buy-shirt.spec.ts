@@ -4,23 +4,23 @@ import { ProductListPage, ShopingCartPage, LoginPage, AddressStepPage, ShippingS
 const menuContentPage = new MenuContentPage();
 const productListPage = new ProductListPage();
 const shopingCartPage = new ShopingCartPage();
-const loginPage = new LoginPage();
+const loginPage = new LoginPage("aperdomobo@gmail.com","WorkshopProtractor");
 const addressStepPage = new AddressStepPage();
 const shippingPage = new ShippingStepPage();
-const paymentPage = new PaymentStepPage();
+const paymentPage = new PaymentStepPage("Your order on My Store is complete.");
 
 describe("Buy a t-shirt", () => {
   it("then the t-shirt should be bought", () => {
     menuContentPage.visitMenuContentPage()
     menuContentPage.goToTShirtMenu()
 
-    productListPage.addingProduct()
+    productListPage.addProduct()
     productListPage.proceedToCart()
     
     shopingCartPage.shopingCartNav()
 
-    loginPage.addingLoginEmail()
-    loginPage.addingLoginPasswd()
+    loginPage.addEmail()
+    loginPage.addPass()
     loginPage.submitLogin()
 
     addressStepPage.confirmAdress()
@@ -30,6 +30,6 @@ describe("Buy a t-shirt", () => {
 
     paymentPage.selectPaymentMethod()
     paymentPage.confirmOrder()
-    paymentPage.textOrderComplete()
+    paymentPage.verifyOrderCompletedTitle()
   });
 });

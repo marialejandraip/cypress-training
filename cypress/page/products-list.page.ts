@@ -7,7 +7,7 @@ class ProductListPage {
       this.proceedToCheckout = "[style*=\"display: block;\"] .button-container > a"
   }
 
-  public addingProduct(): void {
+  public addProduct(): void {
       cy.get(this.buttonAdd).click()
   }
 
