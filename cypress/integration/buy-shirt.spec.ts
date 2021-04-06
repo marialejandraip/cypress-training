@@ -1,24 +1,35 @@
+import { MenuContentPage } from "../page/index"
+import { ProductListPage, ShopingCartPage, LoginPage, AddressStepPage, ShippingStepPage, PaymentStepPage } from "../page/index"
+
+const menuContentPage = new MenuContentPage();
+const productListPage = new ProductListPage();
+const shopingCartPage = new ShopingCartPage();
+const loginPage = new LoginPage("aperdomobo@gmail.com","WorkshopProtractor");
+const addressStepPage = new AddressStepPage();
+const shippingPage = new ShippingStepPage();
+const paymentPage = new PaymentStepPage("Your order on My Store is complete.");
+
 describe("Buy a t-shirt", () => {
-
   it("then the t-shirt should be bought", () => {
-    cy.visit("http://automationpractice.com/")
-    cy.get("#block_top_menu > ul > li:nth-child(3) > a").click()
-    cy.get("#center_column a.button.ajax_add_to_cart_button.btn.btn-default").click()
-    cy.get("[style*=\"display: block;\"] .button-container > a").click()
-    cy.get(".cart_navigation span").click()
+    menuContentPage.visitMenuContentPage()
+    menuContentPage.goToTShirtMenu()
 
-    cy.get("#email").type("aperdomobo@gmail.com")
-    cy.get("#passwd").type("WorkshopProtractor")
+    productListPage.addProduct()
+    productListPage.proceedToCart()
+    
+    shopingCartPage.shopingCartNav()
 
-    // Completar la prueba ...
-    cy.get("#SubmitLogin").click()
-    cy.get("#center_column > form > p > button").click()
-    cy.get("#cgv").check()
-    cy.get("#form > p > button").click()
-    cy.get("#HOOK_PAYMENT > div:nth-child(1) > div > p > a").click()
-    cy.get("#cart_navigation > button").click()
+    loginPage.addEmail()
+    loginPage.addPass()
+    loginPage.submitLogin()
 
-    cy.get("#center_column > div > p > strong")
-      .should("have.text", "Your order on My Store is complete.")
+    addressStepPage.confirmAdress()
+
+    shippingPage.checkTerms()
+    shippingPage.submitShipping()
+
+    paymentPage.selectPaymentMethod()
+    paymentPage.confirmOrder()
+    paymentPage.verifyOrderCompletedTitle()
   });
 });
