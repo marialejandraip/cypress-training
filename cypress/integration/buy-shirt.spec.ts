@@ -24,7 +24,7 @@ describe("Buy a t-shirt", () => {
     loginPage.submitLogin()
 
     addressStepPage.confirmAdress()
-
+    /*  */
     shippingPage.checkTerms()
     shippingPage.submitShipping()
 
