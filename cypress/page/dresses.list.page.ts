@@ -12,16 +12,15 @@ class DressesListPage {
     return cy.get(this.dressItem)
   }
 
-  validateItemsNumber(itemsNumber: number){
+  validateItemsNumber(itemsNumber: number) {
     cy.get(this.dressItem).should("have.length", itemsNumber)
   }
 
-  validateItemsNames ( names: string[] ){
+  validateItemsNames ( names: string[] ) {
     cy.get(this.dressName).each((item, index) => {
       cy.wrap(item).should("contain.text", names[index])
     })
   }
-
 }
 
 export {DressesListPage}
