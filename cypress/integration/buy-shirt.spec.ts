@@ -1,15 +1,25 @@
 import { MenuContentPage } from "../page/index"
 import { ProductListPage, ShopingCartPage, LoginPage, AddressStepPage, ShippingStepPage, PaymentStepPage } from "../page/index"
 
-const menuContentPage = new MenuContentPage();
-const productListPage = new ProductListPage();
-const shopingCartPage = new ShopingCartPage();
-const loginPage = new LoginPage("aperdomobo@gmail.com","WorkshopProtractor");
-const addressStepPage = new AddressStepPage();
-const shippingPage = new ShippingStepPage();
-const paymentPage = new PaymentStepPage("Your order on My Store is complete.");
-
 describe("Buy a t-shirt", () => {
+  let menuContentPage: MenuContentPage;
+  let productListPage: ProductListPage;
+  let shopingCartPage: ShopingCartPage;
+  let loginPage: LoginPage;
+  let addressStepPage: AddressStepPage;
+  let shippingPage: ShippingStepPage;
+  let paymentPage: PaymentStepPage;
+
+  before(() => {
+    menuContentPage = new MenuContentPage();
+    productListPage = new ProductListPage();
+    shopingCartPage = new ShopingCartPage();
+    loginPage = new LoginPage("aperdomobo@gmail.com","WorkshopProtractor");
+    addressStepPage = new AddressStepPage();
+    shippingPage = new ShippingStepPage();
+    paymentPage = new PaymentStepPage("Your order on My Store is complete.");
+  })
+
   it("then the t-shirt should be bought", () => {
     menuContentPage.visitMenuContentPage()
     menuContentPage.goToTShirtMenu()
